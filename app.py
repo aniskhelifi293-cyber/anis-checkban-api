@@ -3,6 +3,9 @@ import requests
 
 app = Flask(__name__)
 
+@app.route('/ping')
+def ping():
+    return jsonify({"status": "alive"}), 200
 @app.route('/checkbanned', methods=['GET'])
 def check_banned():
     try:
